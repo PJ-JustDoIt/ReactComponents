@@ -1,0 +1,246 @@
+body {
+	font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif;  /* system fonts - will go one by one from up to down based on avalability */
+	background: black;
+	color:white;
+}
+
+.nav {
+  display: flex;
+  list-style-type:none;
+  font-weight:bold;
+  cursor:point;
+
+}
+
+a{							/* for NavLink tag */
+  text-decoration : none;
+  color: #FFFFFF;
+}
+
+.nav li {
+  margin-right: 50px;
+
+}
+
+/* For Zoom.js */
+#zoomcontainer{
+	height:100px;
+	width:1000px;
+	margin:200px auto;
+}
+
+#zoommessg { 
+	display: flex;
+	justify-content: center;
+	font-size: 30px;
+	animation: zoominout 1.5s infinite;  /* zoominout = animation name . infinite lets it continue for ever */
+}
+
+@keyframes zoominout {
+	0% {							   /* % denotes time */
+		opacity: 0.6;
+		font-size: 25px;
+	}
+	
+	50% {
+		opacity: 1;
+		font-size: 40px;
+	}
+	
+	100% {
+		opacity: 0.6;
+		font-size: 25px;
+	}
+}
+
+/* For Quantity.js */
+#quantitybox {
+  border: 3px solid #FAFAFA;
+  border-radius: 7px;
+  height: 70px;
+  width: 210px;
+  margin: 200px auto auto auto; 
+  list-style: none; 
+  display: flex;
+  padding:0px;
+}
+
+#quantitybox li{
+	font-size: 2em;
+	padding:15px 20px 0 20px;
+	width:70px;
+	text-align: center;
+	color: #888;
+}
+
+
+/* For Tabs.js */
+#tabcontainer{
+	height:200px;
+	width:400px;
+	margin:150px auto auto 400px;
+}
+
+#tabPane {
+	font-size: 2em;
+    display: flex;
+    list-style: none;
+    width:100%;
+    margin: auto auto 0px 100px;
+    height:35%;
+    padding:0px;
+    border: 1px solid #888;
+   
+}
+
+#tabPane li{
+	width:33%;
+	padding:15px 20px 0 20px;
+	text-align: center;
+    cursor:pointer;
+    text-transform: uppercase;
+    color: #FF0000;
+    background: #f7f7f7;
+}
+
+#tabPane li:hover{
+  background-color: #ddd;
+}
+
+
+#textPane{
+  text-align: center;
+  border: 1px solid #888;
+  width : 100%;
+  height:70%;
+  margin :0px auto auto 100px;
+  padding:20px 0 0 0 ;
+}
+
+/* For FormAndMenu.js */
+
+#FormAndMenuContainer {
+  margin: 50px auto auto 600px;
+  width:30%;
+  background-color: #000;
+  border:1px solid #eeeeee;
+  box-shadow:10px 10px 5px rgba(100,100,100,.5);
+}
+
+#ContainerContent {
+  margin: auto 10px auto 20px;
+}
+
+#FormAndMenuContainer div.field{   /* div.field is : only div elements with class of field */
+  margin:50px auto;	
+}
+
+#FormAndMenuContainer h4 {
+	font-size:1.1em;
+}
+
+
+#Phoneid , #Nameid {
+  display: block;  /* generates a block element box.. A block has some whitespace above and below it and tolerates no HTML elements next to it, except when ordered otherwise (by adding a float declaration to another element, for instance) */
+  padding: .5em .75em;
+  width: 90%;
+  font-size: 1em;
+  line-height: 1.25;
+  color: #55595c;
+  margin:5% 0 10px 0;
+  background-color: black;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 1px solid #FFFFFF;
+  border-left: 0;
+}
+
+
+
+#TimeSelectid{
+	margin:25px 20px 10px auto ;
+	width:22%;
+    font-size:1em;
+    background-color: #ffaa00; 
+    transition: background-color 1s;
+    border: 1px solid transparent;					/* to remove any default border */
+}
+
+#TimeSelectid:hover,#TimeSelectid:focus{			/* focus : is when typed */
+  background-color : #ff4400;
+}
+
+
+
+
+
+/* below make the standard radio button vanish on the screen ( but the clicks are kept intact ). You superimpose custom image on top of it */
+input[type="radio"] {  
+	opacity:0;										/* to make standard radio button vanish on screen */
+}
+
+input[type="radio"] + label {
+    font-size:1em;
+   	text-transform: uppercase;
+   	color: white ;  
+   	cursor: pointer;
+   	margin:auto 15px auto auto;                    /* spacing between the (radiobutton+label)set1 and (radiobutton+label)set2 */
+}
+
+input[type="radio"] + label span {
+    display:inline-block;
+    width:30px;
+    height:10px;
+    margin:1px 0px 0 -30px;						  /* alter this for superimposing the new image on top of standard vanished radio button */
+    cursor:pointer;
+    border-radius: 20%;
+}
+
+/* default state ie., unclicked state*/
+input[type="radio"] + label span {
+    background-color: #FFFFFF 
+   /* border: 4px solid #FFFFFF;  border creates same look as standard radio button */
+}
+
+/* Checked ie., clicked state */
+input[type="radio"]:checked + label span{
+     background-color: #660006;  
+}
+
+
+
+
+
+
+
+input[type=submit] {
+  padding: .75em 1em;
+  font-weight: 600;
+  text-align: center;
+  color: #000;
+  vertical-align: middle;
+  border: solid transparent;  /* makes a perfect rectangle out of a with-radius-submit-button  */
+  cursor: pointer;
+  width:97%;
+  font-size:1em;
+  background-color: #ffaa00;
+  transition: background-color 1s;   /* makes a transition on background-color for 2s wherever else in the css the background-color for this element is required to change , which will be Line A in this case*/
+  border-radius:5px;
+}
+  
+input[type=submit]:hover , input[type=submit]:focus{
+    background-color : #ff4400;								/* Line A */
+    box-shadow: 0 18px 35px rgba(50,50,93,.1),0 8px 15px rgba(0,0,0,.07);
+}
+
+pre{
+	margin:20px auto;
+	border:1px solid grey;
+	padding:20px;
+	width:80%;
+}
+
+
+
+
+
