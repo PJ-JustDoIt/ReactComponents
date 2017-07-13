@@ -32,7 +32,7 @@ handleSubmit(event) {
 }
 
 handleChange(event) {
-  this.setState({[event.target.name]: event.target.value});     // why [] ????
+  this.setState({[event.target.name]: event.target.value});     
 }
 
 
@@ -45,7 +45,7 @@ render() {
           <h4>MAKE  APPOINTMENT  REQUEST </h4>
 
           <div className="field">
-            <label for="Nameid">FULL NAME</label>  {/* There are two different "value " in forms.  a) value = default info that appears. b) Any input / select tag has a value associated with it .This value is sent as event.target.value from the form when u do onChange or onSubmit */}
+            <label for="Nameid">FULL NAME</label>  
             <input type="text" value={this.state.Name} name="Name" id="Nameid" onChange={this.handleChange} />  
           </div>
 
@@ -73,7 +73,7 @@ render() {
                   <option>   12.00   </option>
                 </select>
 
-                 <input type="radio" name="AMPM" id="radiostyle1" value="AM" checked={this.state.AMPM==="AM"} onChange={this.handleChange}/>  {/* checked is default value . value field's value is sent when button is submitted/ onchange . The two radio buttons are lined by name tag*/}
+                 <input type="radio" name="AMPM" id="radiostyle1" value="AM" checked={this.state.AMPM==="AM"} onChange={this.handleChange}/>  
                  <label for="radiostyle1"><span></span> am  </label>
                  
                  <input type="radio" name="AMPM" id="radiostyle2" value="PM" checked={this.state.AMPM==="PM"} onChange={this.handleChange}/>
@@ -86,7 +86,7 @@ render() {
           </div>
         </form>
       </div> 
-    <pre>{JSON.stringify(this.state, null, '\t')} </pre>   {/* pre tags are for retaining the format of text  without reformatting them to default indentation etc */}
+    <pre>{JSON.stringify(this.state, null, '\t')} </pre>   
    </div>
   );
  }

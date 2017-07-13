@@ -1,5 +1,3 @@
-// Tools used : Reactjs, CSS animation
-
 
 var React = require('react');
 var ReactDOM = require('react-dom');

@@ -1,7 +1,7 @@
 var React = require('react');
-var NavLink = require('react-router-dom').NavLink;   //react needs this for anchor tags 
+var NavLink = require('react-router-dom').NavLink;   
 
-function Nav () {						/* for anchor tags . Note use of activeClassName and exact . activeClassName is applied only for / and not for /...   */
+function Nav () {						
   return (
     <ul className='nav'>
       <li>

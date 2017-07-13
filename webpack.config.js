@@ -1,16 +1,16 @@
-var path = require('path');       // utilities for dealing with file dirs - comes with npm automatically - no need of separate install
-var HtmlWebpackPlugin = require('html-webpack-plugin');   // craetes index.html in dist dir and puts in index.js here with script tag as well
+var path = require('path');       
+var HtmlWebpackPlugin = require('html-webpack-plugin');   
 var webpack = require('webpack');
 
-var config = {                // exports an object out of this file
-  entry: './app/index.js',        //webpack takes code from here
+var config = {                
+  entry: './app/index.js',        
   output: {
-    path: path.resolve(__dirname, 'dist'),  // runs JSX to JS transformation and puts the output file in dist dir
+    path: path.resolve(__dirname, 'dist'),  
     filename: 'index_bundle.js'
   },
   module: {
     rules: [
-      { test: /\.(js)$/, use: 'babel-loader' },   // babel-loader runs on .js files:wq. babel loader looks for "babel":{} in package.json - so add that
+      { test: /\.(js)$/, use: 'babel-loader' },   
       { test: /\.css$/, use: [ 'style-loader', 'css-loader' ]}
     ]
   },
@@ -22,14 +22,14 @@ var config = {                // exports an object out of this file
 };
 
 
-if (process.env.NODE_ENV === 'production') {            // for production deployment
+if (process.env.NODE_ENV === 'production') {            
   config.plugins.push(
     new webpack.DefinePlugin({
       'process.env': {
-        'NODE_ENV': JSON.stringify(process.env.NODE_ENV)   // sets env for production
+        'NODE_ENV': JSON.stringify(process.env.NODE_ENV)   
       }
     }),
-    new webpack.optimize.UglifyJsPlugin()               // for minnifying the code
+    new webpack.optimize.UglifyJsPlugin()               
   )
 }
 
